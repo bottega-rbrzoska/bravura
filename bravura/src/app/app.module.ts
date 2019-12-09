@@ -14,6 +14,7 @@ import { TestChildComponent } from './test-child/test-child.component';
 import { TestCounterComponent } from './test-counter/test-counter.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
+import { TestPipe } from './test.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
     TestChildComponent,
     TestCounterComponent,
     UserLoginComponent,
-    ProductListItemComponent
+    ProductListItemComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,9 @@
 {{ myInput.value }}</div>
 <ul>
   <li *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
-    ({{ i }}){{user.name}}</li>
+    ({{ i }}) {{ user | test:true }}
+<!-- NEVER!!!!!!!! ->    {{fullName(user.name, user.lastName)}}-->
+  </li>
 </ul>
 
 <!-- templates -->
