@@ -1,5 +1,15 @@
 {{ testObj.counter }}
 
-{{ testObj.counter < 1000 ? 'mało' : 'dużo'}}
+<div *ngIf="testObj.counter > 1000; else malo">Za dużo</div>
 <br-test-child [testInput]="testObj" title="{{ 'Example Child Component' | uppercase }}"></br-test-child>
 <br-test-counter (incrementCounter)="incrementHandler($event)"></br-test-counter>
+<div><input type="text" #myInput (keyup)="keyupHandler()">
+{{ myInput.value }}</div>
+<ul>
+  <li *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
+    ({{ i }}){{user.name}}</li>
+</ul>
+
+<!-- templates -->
+
+<ng-template #malo><div>Za malo</div></ng-template>

@@ -8,13 +8,21 @@ import { TestType } from '../models/test-type.interface';
 })
 export class TestComponent implements OnInit {
   testObj: TestType = { test: '1', counter: 0};
-
+  users = [
+    { name: 'testuser1', age: 18 },
+    { name: 'testuser2', age: 38 },
+    { name: 'testuser3', age: 68 }
+  ]
   incrementHandler(counterValue: number) {
     this.testObj.counter = counterValue;
   }
   constructor() { }
 
   ngOnInit() {
+  }
+
+  keyupHandler() {
+
   }
 
 }
