@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { TestType } from './models/test-type.interface';
 
 @Component({
   selector: 'br-root',
@@ -7,4 +8,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'bravura';
+
 }

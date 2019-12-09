@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  name: string = null;
   constructor() { }
 
   ngOnInit() {
   }
+
+  handleAuthAction(login) {
+    this.name = login ? 'Alojzy Ciurlok' : null;
+  }
+
 
 }

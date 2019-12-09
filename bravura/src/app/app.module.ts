@@ -10,6 +10,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TestChildComponent } from './test-child/test-child.component';
+import { TestCounterComponent } from './test-counter/test-counter.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductListComponent,
     ProductDetailsComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TestChildComponent,
+    TestCounterComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

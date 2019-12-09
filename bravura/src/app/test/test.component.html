@@ -1,1 +1,5 @@
-<p>test works!</p>
+{{ testObj.counter }}
+
+{{ testObj.counter < 1000 ? 'mało' : 'dużo'}}
+<br-test-child [testInput]="testObj" title="{{ 'Example Child Component' | uppercase }}"></br-test-child>
+<br-test-counter (incrementCounter)="incrementHandler($event)"></br-test-counter>
