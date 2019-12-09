@@ -15,6 +15,7 @@ import { TestCounterComponent } from './test-counter/test-counter.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { TestPipe } from './test.pipe';
+import { VatPipe } from './vat.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TestPipe } from './test.pipe';
     TestCounterComponent,
     UserLoginComponent,
     ProductListItemComponent,
-    TestPipe
+    TestPipe,
+    VatPipe
   ],
   imports: [
     BrowserModule,
