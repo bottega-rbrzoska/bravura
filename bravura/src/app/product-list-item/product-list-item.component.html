@@ -1,0 +1,4 @@
+{{ product.name }} ({{ product.price | currency: 'EUR' }})
+<a class="btn btn-warning mr-2" [routerLink]="['/products', product.id]">Edit</a>
+<button class="btn btn-outline-primary" (click)="toggleDescription()">Description</button>
+<div *ngIf="showDescription">{{ product.description }}</div>

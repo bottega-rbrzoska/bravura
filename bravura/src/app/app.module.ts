@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TestChildComponent } from './test-child/test-child.component';
 import { TestCounterComponent } from './test-counter/test-counter.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     PageNotFoundComponent,
     TestChildComponent,
     TestCounterComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    ProductListItemComponent
   ],
   imports: [
     BrowserModule,
