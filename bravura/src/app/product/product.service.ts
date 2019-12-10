@@ -10,7 +10,6 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   refreshProducts(filter = '') {
-    console.log(filter)
     this.httpClient.get<Product[]>('http://localhost:3000/products', {
       params: {
         name_like: filter[0] || '',
