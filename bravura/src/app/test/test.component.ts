@@ -16,6 +16,7 @@ export class TestComponent implements OnInit {
   ];
   constructor(private testService: TestService) {
     console.log(testService.getTestData());
+    testService.getConfig().subscribe(x => console.log(x));
   }
 
   ngOnInit() {
