@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationService } from '../../shared/notifications/notification.service';
+import { NotificationType } from '../../models/notifaction-message.interface';
 
 @Component({
   selector: 'br-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit() {
+  }
+
+  generate(type) {
+    this.notificationService.pushMessage({
+      message: 'Some message',
+      type
+    });
   }
 
 }
