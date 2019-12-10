@@ -7,7 +7,7 @@ import { TestCounterComponent } from './test-counter/test-counter.component';
 import { TestChildComponent } from './test-child/test-child.component';
 import { SharedModule } from '../shared/shared.module';
 import { TestFormComponent } from './test-form/test-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     TestRoutingModule  ]
 })
 export class TestModule { }

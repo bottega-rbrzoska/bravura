@@ -3,7 +3,7 @@ import { TestType } from '../models/test-type.interface';
 import { TestService } from '../core/test.service';
 import { Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
-import { NgForm } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'br-test',
@@ -11,6 +11,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
+  reactiveForm = new FormGroup({
+    name: new FormControl('', [Validators.required, this.dupaValidator]),
+    email: new FormControl({
+      value: '',
+      disabled: true
+    }, {
+      updateOn: 'blur',
+      validators: Validators.email
+    })
+  });
   testSubj$ = new Subject();
   testObj: TestType = { test: '1', counter: 0};
   users = [
@@ -27,6 +37,13 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.reactiveForm.valueChanges.subscribe( () => {
+      if (this.reactiveForm.get('name').valid)  {
+        this.reactiveForm.get('email').enable({emitEvent: false});
+      } else {
+        this.reactiveForm.get('email').disable({emitEvent: false});
+      }
+    });
   }
 
   incrementHandler(counterValue: number) {
@@ -46,6 +63,16 @@ export class TestComponent implements OnInit {
     if (form.valid) {
       console.log(form.value);
     }
+  }
+
+  handleReactiveSubmit() {
+    if (this.reactiveForm.valid) {
+      console.log(this.reactiveForm.getRawValue());
+    }
+  }
+
+  dupaValidator(control: AbstractControl) {
+    return control.value.includes('dupa') ? { dupaError: true }: null;
   }
 
 }
