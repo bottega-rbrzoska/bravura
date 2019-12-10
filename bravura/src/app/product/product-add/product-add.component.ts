@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'br-product-add',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  handleSave(product) {
+    this.productService.addProduct(product).subscribe(() => {
+      this.productService.refreshProducts();
+      this.router.navigateByUrl('/products');
+    });
   }
 
 }

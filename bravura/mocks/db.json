@@ -1,5 +1,8 @@
 {
-  "categories": ["food", "electronics"],
+  "categories": [
+    "food",
+    "electronics"
+  ],
   "products": [
     {
       "id": 1,
@@ -35,6 +38,20 @@
       "name": "Canned radiation",
       "description": "Leberkas kielbasa andouille bacon brisket frankfurter fatback corned beef strip steak, chicken flank landjaeger short loin salami. Cow salami doner boudin pork belly ham picanha biltong hamburger t-bone frankfurter meatloaf chuck. Turkey ham shank chicken turducken. Ham drumstick frankfurter doner landjaeger bresaola.",
       "price": 899
+    },
+    {
+      "name": "asdasd",
+      "price": 22,
+      "description": "asdasdasd",
+      "category": "food",
+      "id": 6
+    },
+    {
+      "name": "asdasd",
+      "price": 333,
+      "description": "dasasdsadasd",
+      "category": "food",
+      "id": 7
     }
   ]
 }

@@ -11,6 +11,7 @@ import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
   imports: [
     SharedModule,
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService]
 })

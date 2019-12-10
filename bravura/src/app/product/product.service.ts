@@ -17,4 +17,12 @@ export class ProductService {
       }
     }).subscribe( p => this.productsSubj$.next(p));
   }
+
+  updateProduct(product: Product) {
+    return this.httpClient.put('http://localhost:3000/products/' + product.id, product);
+  }
+
+  addProduct(product: Product) {
+    return this.httpClient.post('http://localhost:3000/products/', product);
+  }
 }
