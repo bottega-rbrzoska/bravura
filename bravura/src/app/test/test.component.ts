@@ -3,6 +3,7 @@ import { TestType } from '../models/test-type.interface';
 import { TestService } from '../core/test.service';
 import { Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'br-test',
@@ -39,6 +40,12 @@ export class TestComponent implements OnInit {
 
   keyupHandler(value) {
     this.testSubj$.next(value);
+  }
+
+  handleTemplateSubmit(form: NgForm) {
+    if (form.valid) {
+      console.log(form.value);
+    }
   }
 
 }
