@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestType } from '../models/test-type.interface';
-import { last } from 'rxjs/operators';
-import { TestService } from './test.service';
+import { TestService } from '../core/test.service';
 
 @Component({
   selector: 'br-test',
