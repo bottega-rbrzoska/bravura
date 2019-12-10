@@ -3,7 +3,7 @@ import { TestType } from '../models/test-type.interface';
 import { TestService } from '../core/test.service';
 import { Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
-import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'br-test',
@@ -13,13 +13,17 @@ import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@an
 export class TestComponent implements OnInit {
   reactiveForm = new FormGroup({
     name: new FormControl('', [Validators.required, this.dupaValidator]),
+    niewiem: new FormControl(),
     email: new FormControl({
       value: '',
       disabled: true
     }, {
       updateOn: 'blur',
       validators: Validators.email
-    })
+    }),
+    ulubione: new FormArray([
+      new FormControl('')
+    ])
   });
   testSubj$ = new Subject();
   testObj: TestType = { test: '1', counter: 0};
@@ -73,6 +77,10 @@ export class TestComponent implements OnInit {
 
   dupaValidator(control: AbstractControl) {
     return control.value.includes('dupa') ? { dupaError: true }: null;
+  }
+
+  addCostamControl() {
+    (this.reactiveForm.get('ulubione') as FormArray).push(new FormControl());
   }
 
 }

@@ -1,1 +1,17 @@
-<p>nie-wiem-control works!</p>
+<div class="btn-group" >
+  <button type="button" class="btn btn-secondary"
+          (blur)="onTouch()"
+          [disabled]="isDisabled"
+          [ngClass]="{'btn-danger': selectedNieWiemValue === 'nie wiem'}"
+          (click)="select('nie wiem')">Nie wiem</button>
+  <button type="button" class="btn btn-secondary"
+          [disabled]="isDisabled"
+          (blur)="onTouch()"
+          [ngClass]="{'btn-danger': selectedNieWiemValue === 'chyba'}"
+          (click)="select('chyba')">Chyba</button>
+  <button type="button" class="btn btn-secondary"
+          [disabled]="isDisabled"
+          (blur)="onTouch()"
+          [ngClass]="{'btn-danger': selectedNieWiemValue === 'yyy'}"
+          (click)="select('yyy')">Yyyy?</button>
+</div>

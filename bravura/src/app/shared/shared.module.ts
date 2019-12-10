@@ -18,6 +18,7 @@ import { NieWiemControlComponent } from './nie-wiem-control/nie-wiem-control.com
   exports: [
     TestPipe,
     VatPipe,
+    NieWiemControlComponent,
     NgbButtonsModule,
     NgbModalModule,
   ]

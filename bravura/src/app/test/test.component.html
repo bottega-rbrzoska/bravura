@@ -14,9 +14,16 @@
     <form [formGroup]="reactiveForm" (ngSubmit)="handleReactiveSubmit()">
       <div>Name: <input type="text" formControlName="name" class="form-control"></div>
       <div>Email: <input type="text"  formControlName="email" class="form-control"></div>
-      <button class="btn btn-danger">Submit</button>
+      <div><br-nie-wiem-control  formControlName="niewiem" ></br-nie-wiem-control></div>
+      <div>
+        <div *ngFor="let control of reactiveForm.get('ulubione').controls">
+          Ulubione: <input [formControl]="control">
+        </div>
+        <button  class="btn btn-primary btn-sm" (click)="addCostamControl()">Dodaj kolejne ulubione cośtam</button></div>
+      <button class="btn btn-warning">Submit</button>
     </form>
   </div>
+  {{ reactiveForm.value | json }}
 </div>
 
 <div *ngIf="testObj.counter > 1000; else malo">Za dużo</div>

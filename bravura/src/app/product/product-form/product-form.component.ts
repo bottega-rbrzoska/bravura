@@ -21,6 +21,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   handleSubmit() {
+
     if (this.productsForm.valid) {
       this.save.emit(this.productsForm.value);
     }
