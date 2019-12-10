@@ -6,6 +6,7 @@ import { TestComponent } from './test.component';
 import { TestCounterComponent } from './test-counter/test-counter.component';
 import { TestChildComponent } from './test-child/test-child.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
