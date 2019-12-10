@@ -16,7 +16,7 @@
       <div>Email: <input type="text"  formControlName="email" class="form-control"></div>
       <div><br-nie-wiem-control  formControlName="niewiem" ></br-nie-wiem-control></div>
       <div>
-        <div *ngFor="let control of reactiveForm.get('ulubione').controls">
+        <div *ngFor="let control of ulubioneControls">
           Ulubione: <input [formControl]="control">
         </div>
         <button  class="btn btn-primary btn-sm" (click)="addCostamControl()">Dodaj kolejne ulubione cośtam</button></div>

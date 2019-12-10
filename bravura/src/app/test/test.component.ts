@@ -32,6 +32,9 @@ export class TestComponent implements OnInit {
     { name: 'testuser2', lastName: 'lastname 2', age: 38 },
     { name: 'testuser3', lastName: 'lastname 3', age: 68 }
   ];
+  get ulubioneControls() {
+    return (this.reactiveForm.get('ulubione') as FormArray).controls;
+  }
   constructor(private testService: TestService) {
     testService.getConfig().subscribe(x => console.log(x));
     this.testSubj$.pipe(
@@ -76,7 +79,7 @@ export class TestComponent implements OnInit {
   }
 
   dupaValidator(control: AbstractControl) {
-    return control.value.includes('dupa') ? { dupaError: true }: null;
+    return control.value.includes('dupa') ? { dupaError: true } : null;
   }
 
   addCostamControl() {
