@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between">
+  <div>
+    <span> {{ product.name }} ({{ product.price | vat: 43 }})</span>
+    <div *ngIf="showDescription">{{ product.description }}</div>
+  </div>
+  <div>
+    <button class="btn btn-outline-primary mr-2" (click)="toggleDescription()">Description</button>
+    <a class="btn btn-warning" [routerLink]="['/products', product.id]">Edit</a></div>
+</div>

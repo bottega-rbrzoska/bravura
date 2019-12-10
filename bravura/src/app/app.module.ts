@@ -3,39 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { KontaktComponent } from './kontakt/kontakt.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TestChildComponent } from './test-child/test-child.component';
-import { TestCounterComponent } from './test-counter/test-counter.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-import { ProductListItemComponent } from './product-list-item/product-list-item.component';
-import { TestPipe } from './test.pipe';
-import { VatPipe } from './vat.pipe';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { MainModule } from './main/main.module';
+import { TestRoutingModule } from './test/test-routing.module';
+import { TestModule } from './test/test.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-    NavigationComponent,
-    KontaktComponent,
-    ProductListComponent,
-    ProductDetailsComponent,
-    HomeComponent,
-    PageNotFoundComponent,
-    TestChildComponent,
-    TestCounterComponent,
-    UserLoginComponent,
-    ProductListItemComponent,
-    TestPipe,
-    VatPipe
   ],
   imports: [
+    SharedModule,
+    CoreModule,
+    MainModule,
     BrowserModule,
+    TestModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../models/product';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'br-product-list-item',
@@ -16,7 +16,7 @@ export class ProductListItemComponent implements OnInit {
   }
 
   toggleDescription() {
-    this.showDescription = !this.showDescription
+    this.showDescription = !this.showDescription;
   }
 
 }

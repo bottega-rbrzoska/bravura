@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark d-flex">
+  <div class="nav navbar-nav flex-grow-1">
+    <div class="navbar-brand">{{  title }}</div>
+    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a class="nav-item nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+    <a class="nav-item nav-link" routerLink="/test" routerLinkActive="active">Test</a>
+    <a class="nav-item nav-link" routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
+  </div>
+  <div>
+    <br-user-login [userName]="name" (authAction)="handleAuthAction($event)"></br-user-login>
+  </div>
+</nav>

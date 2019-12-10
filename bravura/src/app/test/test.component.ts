@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TestType } from '../models/test-type.interface';
 import { last } from 'rxjs/operators';
+import { TestService } from './test.service';
 
 @Component({
   selector: 'br-test',
@@ -14,12 +15,15 @@ export class TestComponent implements OnInit {
     { name: 'testuser2', lastName: 'lastname 2', age: 38 },
     { name: 'testuser3', lastName: 'lastname 3', age: 68 }
   ];
-  incrementHandler(counterValue: number) {
-    this.testObj.counter = counterValue;
+  constructor(private testService: TestService) {
+    console.log(testService.getTestData());
   }
-  constructor() { }
 
   ngOnInit() {
+  }
+
+  incrementHandler(counterValue: number) {
+    this.testObj.counter = counterValue;
   }
 
   fullName(name, lastname) {

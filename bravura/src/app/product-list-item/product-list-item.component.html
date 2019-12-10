@@ -1,4 +1,0 @@
-{{ product.name }} ({{ product.price | vat: 43 }})
-<a class="btn btn-warning mr-2" [routerLink]="['/products', product.id]">Edit</a>
-<button class="btn btn-outline-primary" (click)="toggleDescription()">Description</button>
-<div *ngIf="showDescription">{{ product.description }}</div>

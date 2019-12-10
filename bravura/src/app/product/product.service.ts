@@ -1,14 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 
-@Component({
-  selector: 'br-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
-})
-export class ProductListComponent implements OnInit {
-
-  products: Product[] = [
+@Injectable()
+export class ProductService {
+  private products: Product[] = [
     {
       id: '1',
       name: 'Prod1',
@@ -33,7 +28,8 @@ export class ProductListComponent implements OnInit {
   ];
   constructor() { }
 
-  ngOnInit() {
+  getProducts(nameDescriptionFilter = '') {
+    return this.products
+      .filter( prod => prod.description.includes(nameDescriptionFilter) || prod.name.includes(nameDescriptionFilter));
   }
-
 }
