@@ -12,7 +12,7 @@ const config = {
   path: '/config',
   delay: 3000,
   template: {
-    apiUrl: 'http://localhost:3000'
+    productsApiUrl: 'http://localhost:3000'
   }
 };
 

@@ -1,4 +1,5 @@
 {
+  "categories": ["food", "electronics"],
   "products": [
     {
       "id": 1,
