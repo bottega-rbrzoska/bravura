@@ -1,4 +1,5 @@
 <br-product-filter (search)="handleSearch($event)"></br-product-filter>
+<a class="btn btn-primary" routerLink="/products/add">Add product</a>
 <ng-container *ngIf="products$ | async as products; else loader">
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let product of products">
