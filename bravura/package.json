@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "backend1": "json-server mocks/db.json",
+    "backend1": "json-server mocks/db.json --delay=2000",
     "backend2": "dyson mocks 5000"
   },
   "private": true,

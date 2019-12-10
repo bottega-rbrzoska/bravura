@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ProductService {
   private products: Product[] = [];
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getProducts(nameDescriptionFilter = '') {
-    return this.products
-      .filter( prod => prod.description.includes(nameDescriptionFilter) || prod.name.includes(nameDescriptionFilter));
+    return this.httpClient.get<Product[]>('http://localhost:3000/products');
   }
 }
