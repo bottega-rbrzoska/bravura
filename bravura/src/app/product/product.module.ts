@@ -7,12 +7,20 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { ProductService } from './product.service';
 import { SharedModule } from '../shared/shared.module';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailsComponent,
-    ProductListItemComponent],
+    ProductListItemComponent,
+    ProductAddComponent,
+    ProductEditComponent,
+    ProductFormComponent,
+    ProductFilterComponent],
   imports: [
     SharedModule,
     CommonModule,

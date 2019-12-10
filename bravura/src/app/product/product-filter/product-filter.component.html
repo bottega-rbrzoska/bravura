@@ -1,0 +1,9 @@
+<div>
+  Name or description: <input class="form-control" #searchInput (keyup)="inputSubj$.next(searchInput.value)">
+</div>
+<div>
+  Category: <select class="form-control" #searchSelect (select)="selectSubj$.next(searchSelect.value)">
+  <option value="food">Food</option>
+  <option value="electronic">Electronic</option>
+</select>
+</div>
