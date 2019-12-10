@@ -8,7 +8,6 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { ProductService } from './product.service';
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
   declarations: [
     ProductListComponent,

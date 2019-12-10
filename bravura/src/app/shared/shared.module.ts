@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TestPipe } from './test.pipe';
 import { VatPipe } from './vat.pipe';
 
-
-
 @NgModule({
   declarations: [
     TestPipe,

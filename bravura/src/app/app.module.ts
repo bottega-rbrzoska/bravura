@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
-import { TestRoutingModule } from './test/test-routing.module';
 import { TestModule } from './test/test.module';
 
 @NgModule({
