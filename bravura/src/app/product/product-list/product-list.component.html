@@ -1,5 +1,15 @@
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let product of products">
-    <br-product-list-item [product]="product"></br-product-list-item>
-  </li>
-</ul>
+
+<ng-container *ngIf="products$ | async as products; else loader">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let product of products">
+      <br-product-list-item [product]="product"></br-product-list-item>
+    </li>
+  </ul>
+</ng-container>
+<ng-template #loader>
+  <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>
