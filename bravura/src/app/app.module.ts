@@ -17,7 +17,6 @@ import { TestModule } from './test/test.module';
     CoreModule,
     MainModule,
     BrowserModule,
-    TestModule,
     AppRoutingModule
   ],
   providers: [],

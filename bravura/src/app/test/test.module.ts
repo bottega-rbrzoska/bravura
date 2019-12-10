@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { TestRoutingModule } from './test-routing.module';
 import { TestComponent } from './test.component';
 import { TestCounterComponent } from './test-counter/test-counter.component';
-import { TestService } from './test.service';
 import { TestChildComponent } from './test-child/test-child.component';
 import { SharedModule } from '../shared/shared.module';
 
@@ -17,7 +16,6 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     CommonModule,
     TestRoutingModule
-  ],
-  providers: [TestService]
+  ]
 })
 export class TestModule { }
