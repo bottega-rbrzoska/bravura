@@ -12,9 +12,14 @@ export class ProductListComponent implements OnInit {
 
   products$: Observable<Product[]>;
   constructor(private productService: ProductService) {
-    this.products$ = this.productService.getProducts();
+    this.products$ = this.productService.products$;
+    this.productService.refreshProducts();
   }
 
   ngOnInit() {
+  }
+
+  handleSearch(searchData) {
+    this.productService.refreshProducts(searchData);
   }
 }
