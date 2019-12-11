@@ -1,25 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductStore } from '../product.store';
 import { Product } from '../../models/product';
-import { ProductService } from '../product.service';
-import { Observable, Subject } from 'rxjs';
+import { NotificationService } from '../../shared/notifications/notification.service';
+import { filter } from 'rxjs/operators';
+import { NotificationType } from '../../models/notifaction-message.interface';
+import { untilDestroyed } from 'ngx-take-until-destroy';
 
 @Component({
   selector: 'br-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
 
   products$: Observable<Product[]>;
-  constructor(private productService: ProductService) {
-    this.products$ = this.productService.products$;
-    this.productService.refreshProducts();
+  pending$: Observable<boolean>
+  constructor(private productStore: ProductStore, notificationService: NotificationService) {
+    this.products$ = this.productStore.products$;
+    this.pending$ = this.productStore.pending$;
+    this.productStore.error$.pipe(untilDestroyed(this), filter(err => !!err)).subscribe(() => notificationService.pushMessage({
+      message: 'Error during processing products',
+      type: NotificationType.Error
+    }));
+
+    if (!this.productStore.state.products.length) {
+      this.productStore.refreshUsers();
+    }
   }
 
   ngOnInit() {
   }
 
   handleSearch(searchData) {
-    this.productService.refreshProducts(searchData);
+    console.log('search');
+    this.productStore.refreshUsers(searchData);
+  }
+
+  ngOnDestroy(): void {
   }
 }

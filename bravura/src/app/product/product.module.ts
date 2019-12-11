@@ -12,6 +12,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductStore } from './product.store';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ProductService]
+  providers: [ProductService, ProductStore]
 })
 export class ProductModule { }

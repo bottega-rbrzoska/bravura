@@ -7,6 +7,7 @@ import { NieWiemControlComponent } from './nie-wiem-control/nie-wiem-control.com
 import { NotificationComponent } from './notifications/notification/notification.component';
 import { NotificationService } from './notifications/notification.service';
 import { NotificationContainerDirective } from './notifications/notification-container.directive';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NotificationContainerDirective } from './notifications/notification-con
     VatPipe,
     NieWiemControlComponent,
     NotificationComponent,
-    NotificationContainerDirective],
+    NotificationContainerDirective,
+    LoaderComponent],
   imports: [
     CommonModule,
     NgbButtonsModule,
@@ -26,7 +28,8 @@ import { NotificationContainerDirective } from './notifications/notification-con
     NieWiemControlComponent,
     NgbButtonsModule,
     NgbModalModule,
-    NotificationContainerDirective
+    NotificationContainerDirective,
+    LoaderComponent
   ],
   entryComponents: [NotificationComponent]
 })

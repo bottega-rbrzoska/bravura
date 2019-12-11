@@ -1,16 +1,10 @@
+<br-loader  *ngIf="pending$ | async" ></br-loader>
 <br-product-filter (search)="handleSearch($event)"></br-product-filter>
 <a class="btn btn-primary" routerLink="/products/add">Add product</a>
-<ng-container *ngIf="products$ | async as products; else loader">
+<ng-container *ngIf="products$ | async as products">
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let product of products">
       <br-product-list-item [product]="product"></br-product-list-item>
     </li>
   </ul>
 </ng-container>
-<ng-template #loader>
-  <div class="d-flex h-100 w-100 justify-content-center align-items-center">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
-</ng-template>

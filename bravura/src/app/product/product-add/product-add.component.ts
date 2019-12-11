@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
+import { ProductStore } from '../product.store';
+import { Observable } from 'rxjs';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'br-product-add',
@@ -9,16 +12,17 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent implements OnInit {
 
-  constructor(private productService: ProductService, private router: Router) { }
+  pending$: Observable<boolean>;
+
+  constructor(private productStore: ProductStore, private router: Router) {
+    this.pending$ = this.productStore.pending$;
+  }
 
   ngOnInit() {
   }
 
   handleSave(product) {
-    this.productService.addProduct(product).subscribe(() => {
-      this.productService.refreshProducts();
-      this.router.navigateByUrl('/products');
-    });
+    this.productStore.addProduct(product);
   }
 
 }
