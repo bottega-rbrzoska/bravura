@@ -98,6 +98,7 @@ export class TestComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log(this.elemButton);
+    console.log(this.child);
     console.log(this.listElements);
   }
   toggleAll() {
