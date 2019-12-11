@@ -1,16 +1,15 @@
 const user = {
   path: '/auth',
-  delay: 1000,
   template: {
     name: 'Alojzy Ciurlok',
     token: 'dkfje89fh3489fijsdkljfwej9fk23pojosefjk;wek@439fj03',
-    permissions: ['products']
+    roles: ['user']
   }
 };
 
 const config = {
   path: '/config',
-  delay: 3000,
+  delay: 1000,
   template: {
     productsApiUrl: 'http://localhost:3000'
   }
