@@ -6,6 +6,7 @@ import { NgbButtonsModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NieWiemControlComponent } from './nie-wiem-control/nie-wiem-control.component';
 import { TestDirective } from './test.directive';
 import { HighlightDirective } from './highlight.directive';
+import { TestStructDirective } from './test-struct.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HighlightDirective } from './highlight.directive';
     VatPipe,
     NieWiemControlComponent,
     TestDirective,
-    HighlightDirective],
+    HighlightDirective,
+    TestStructDirective],
   imports: [
     CommonModule,
     NgbButtonsModule,
@@ -26,7 +28,8 @@ import { HighlightDirective } from './highlight.directive';
     NgbButtonsModule,
     NgbModalModule,
     TestDirective,
-    HighlightDirective
+    HighlightDirective,
+    TestStructDirective
   ]
 })
 export class SharedModule { }

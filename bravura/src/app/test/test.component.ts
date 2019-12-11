@@ -25,6 +25,7 @@ export class TestComponent implements OnInit {
       new FormControl('')
     ])
   });
+  elements = 0;
   testSubj$ = new Subject();
   testObj: TestType = { test: '1', counter: 0};
   users = [
@@ -84,6 +85,10 @@ export class TestComponent implements OnInit {
 
   addCostamControl() {
     (this.reactiveForm.get('ulubione') as FormArray).push(new FormControl());
+  }
+
+  addNextElement() {
+    this.elements++;
   }
 
 }
