@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestPipe } from './test.pipe';
 import { VatPipe } from './vat.pipe';
@@ -8,6 +8,10 @@ import { TestDirective } from './test.directive';
 import { HighlightDirective } from './highlight.directive';
 import { TestStructDirective } from './test-struct.directive';
 import { PermissionsDirective } from './permissions.directive';
+import { NotificationComponent } from './notifications/notification/notification.component';
+import { NotificationRefDirective } from './notifications/notification-ref.directive';
+import { NotificationContainerComponent } from './notifications/notification-container/notification-container.component';
+import { NotificationService } from './notifications/notification.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { PermissionsDirective } from './permissions.directive';
     TestDirective,
     HighlightDirective,
     TestStructDirective,
-    PermissionsDirective],
+    PermissionsDirective,
+    NotificationComponent,
+    NotificationRefDirective,
+    NotificationContainerComponent],
   imports: [
     CommonModule,
     NgbButtonsModule,
@@ -32,7 +39,17 @@ import { PermissionsDirective } from './permissions.directive';
     TestDirective,
     HighlightDirective,
     TestStructDirective,
-    PermissionsDirective
-  ]
+    PermissionsDirective,
+    NotificationRefDirective,
+    NotificationContainerComponent
+  ],
+  entryComponents: [NotificationComponent]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [NotificationService]
+    };
+  }
+}
