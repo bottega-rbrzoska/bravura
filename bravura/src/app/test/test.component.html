@@ -25,7 +25,7 @@
   </div>
   {{ reactiveForm.value | json }}
 </div>
-<button class="btn btn-sm btn-outline-primary" (click)="addNextElement()">AddElement</button>
+<button class="btn btn-sm btn-outline-primary" (click)="addNextElement()" #addElementButton>AddElement</button>
   <div *brTestStruct="let index dupa elements; let d = doubled">{{ index }}. Test content({{ d }})</div>
 
 
@@ -38,12 +38,12 @@
 <ul>
   <li [brTest]="user.name" brHighlight="naszaklasa" #highlightDirectiveInstance="brHighlight"
       *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
-    <button class="btn btn-sm btn-secondary" (mouseover)="highlightDirectiveInstance.toggle()">Toggle</button>
     ({{ i }}) {{ user | test:true }}
 <!-- NEVER!!!!!!!! ->    {{fullName(user.name, user.lastName)}}-->
   </li>
 </ul>
 
+<button class="btn btn-sm btn-secondary" (click)="toggleAll()">Toggle</button>
 
 <!-- templates -->
 

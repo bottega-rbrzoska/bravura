@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { TestType } from '../models/test-type.interface';
 import { TestService } from '../core/test.service';
 import { Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { AbstractControl, FormArray, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { HighlightDirective } from '../shared/highlight.directive';
+import { TestChildComponent } from './test-child/test-child.component';
 
 @Component({
   selector: 'br-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss']
 })
-export class TestComponent implements OnInit {
+export class TestComponent implements OnInit, AfterViewInit {
+  @ViewChild('addElementButton', { static: true }) elemButton: ElementRef;
+  @ViewChild(TestChildComponent, { static: true }) child: TestChildComponent;
+  @ViewChildren(HighlightDirective) listElements: QueryList<HighlightDirective>;
   reactiveForm = new FormGroup({
     name: new FormControl('', [Validators.required, this.dupaValidator]),
     niewiem: new FormControl(),
@@ -89,6 +94,16 @@ export class TestComponent implements OnInit {
 
   addNextElement() {
     this.elements++;
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.elemButton);
+    console.log(this.listElements);
+  }
+  toggleAll() {
+    this.listElements.forEach(el => {
+      el.toggle();
+    })
   }
 
 }
