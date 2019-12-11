@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[brHighlight]'
+  selector: '[brHighlight]',
+  exportAs: 'brHighlight'
 })
 export class HighlightDirective {
 
@@ -13,6 +14,7 @@ export class HighlightDirective {
   @HostListener('click')
   toggle() {
     this.isActive = !this.isActive;
-    this.isActive ? this.renderer.addClass(this.el.nativeElement, this.brHighlight) : this.renderer.removeClass(this.el.nativeElement, this.brHighlight)
+    this.isActive ? this.renderer.addClass(this.el.nativeElement, this.brHighlight) :
+      this.renderer.removeClass(this.el.nativeElement, this.brHighlight)
   }
 }

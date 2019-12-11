@@ -36,11 +36,14 @@
 <div><input type="text" #myInput (keyup)="keyupHandler(myInput.value)">
 {{ myInput.value }}</div>
 <ul>
-  <li [brTest]="user.name" brHighlight="naszaklasa" *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
+  <li [brTest]="user.name" brHighlight="naszaklasa" #highlightDirectiveInstance="brHighlight"
+      *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
+    <button class="btn btn-sm btn-secondary" (mouseover)="highlightDirectiveInstance.toggle()">Toggle</button>
     ({{ i }}) {{ user | test:true }}
 <!-- NEVER!!!!!!!! ->    {{fullName(user.name, user.lastName)}}-->
   </li>
 </ul>
+
 
 <!-- templates -->
 
