@@ -4,6 +4,7 @@ import { HomeComponent } from './main/home/home.component';
 import { PageNotFoundComponent } from './main/page-not-found/page-not-found.component';
 import { KontaktComponent } from './main/kontakt/kontakt.component';
 import { AuthService } from './core/auth.service';
+import { ProductListComponent } from './product/product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

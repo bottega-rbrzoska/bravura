@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from '../../models/product';
+import { ProductService } from '../product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'br-product-edit',
@@ -7,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductEditComponent implements OnInit {
 
-  constructor() { }
+  product$: Observable<Product>;
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService) {
+    this.product$ = this.productService.getById(activatedRoute.snapshot.params.id);
+  }
 
   ngOnInit() {
   }

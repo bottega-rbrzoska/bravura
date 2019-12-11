@@ -16,7 +16,6 @@ export class ProductAddComponent implements OnInit {
 
   handleSave(product) {
     this.productService.addProduct(product).subscribe(() => {
-      this.productService.refreshProducts();
       this.router.navigateByUrl('/products');
     });
   }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, skip } from 'rxjs/operators';
 
 @Component({
   selector: 'br-product-filter',
@@ -16,6 +16,7 @@ export class ProductFilterComponent implements OnInit {
   constructor() {
     combineLatest(this.inputSubj$, this.selectSubj$)
       .pipe(
+        skip(1),
         debounceTime(200)
       )
       .subscribe(v => this.search.emit(v));
