@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { CanActivate } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class AuthService implements CanActivate {
 
   private userDataSubj$ = new BehaviorSubject(null);
   userData$ = this.userDataSubj$.asObservable();
+  userRoles$ = this.userDataSubj$.pipe(map(data => data ? data.roles : null));
+
   get userData() {
     return this.userDataSubj$.getValue();
   }

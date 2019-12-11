@@ -3,7 +3,7 @@ import { Directive, Input, OnChanges, OnInit, TemplateRef, ViewContainerRef } fr
 @Directive({
   selector: '[brTestStruct]'
 })
-export class TestStructDirective implements OnInit, OnChanges {
+export class TestStructDirective implements OnChanges {
 
   @Input()
   set brTestStructDupa(val: any) {

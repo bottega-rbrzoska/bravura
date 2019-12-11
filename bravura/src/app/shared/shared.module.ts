@@ -7,6 +7,7 @@ import { NieWiemControlComponent } from './nie-wiem-control/nie-wiem-control.com
 import { TestDirective } from './test.directive';
 import { HighlightDirective } from './highlight.directive';
 import { TestStructDirective } from './test-struct.directive';
+import { PermissionsDirective } from './permissions.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TestStructDirective } from './test-struct.directive';
     NieWiemControlComponent,
     TestDirective,
     HighlightDirective,
-    TestStructDirective],
+    TestStructDirective,
+    PermissionsDirective],
   imports: [
     CommonModule,
     NgbButtonsModule,
@@ -29,7 +31,8 @@ import { TestStructDirective } from './test-struct.directive';
     NgbModalModule,
     TestDirective,
     HighlightDirective,
-    TestStructDirective
+    TestStructDirective,
+    PermissionsDirective
   ]
 })
 export class SharedModule { }
