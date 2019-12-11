@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">
+      <ng-content select="[twHeader]"></ng-content></h4>
+    <button class="btn btn-sm btn-primary" (click)="like()">Like</button></div>
+  <div class="card-body">
+    <ng-content select="[twBody]"></ng-content>
+  </div>
+</div>

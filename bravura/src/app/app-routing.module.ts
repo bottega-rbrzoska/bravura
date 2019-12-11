@@ -5,10 +5,12 @@ import { PageNotFoundComponent } from './main/page-not-found/page-not-found.comp
 import { KontaktComponent } from './main/kontakt/kontakt.component';
 import { AuthService } from './core/auth.service';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { TwitterListComponent } from './main/twitter/twitter-list/twitter-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'kontakt', component: KontaktComponent },
+  { path: 'twitter', component: TwitterListComponent },
   { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
   canActivate: [AuthService]},
   { path: 'test', loadChildren: () => import('./test/test.module').then(m => m.TestModule) },

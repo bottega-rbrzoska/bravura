@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { TwitterListComponent } from './twitter/twitter-list/twitter-list.component';
+import { TwitterContainerComponent } from './twitter/twitter-container/twitter-container.component';
+import { TwitterImageItemComponent } from './twitter/twitter-image-item/twitter-image-item.component';
+import { TwitterHejtItemComponent } from './twitter/twitter-hejt-item/twitter-hejt-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { RouterModule } from '@angular/router';
     KontaktComponent,
     HomeComponent,
     PageNotFoundComponent,
-    UserLoginComponent],
+    UserLoginComponent,
+    TwitterListComponent,
+    TwitterContainerComponent,
+    TwitterImageItemComponent,
+    TwitterHejtItemComponent],
   imports: [
     RouterModule,
     SharedModule,
