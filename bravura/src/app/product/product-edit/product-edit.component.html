@@ -1,4 +1,4 @@
 <ng-container *ngIf="product$ | async as product">
-
+  <br-product-form [product]="product" (save)="handleSave($event)"></br-product-form>
 </ng-container>
 

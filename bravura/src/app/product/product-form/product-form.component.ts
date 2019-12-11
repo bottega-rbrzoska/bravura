@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'br-product-form',
@@ -8,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ProductFormComponent implements OnInit {
 
+  @Input() product: Product;
   @Output() save = new EventEmitter();
   productsForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -18,12 +20,16 @@ export class ProductFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (this.product) {
+      this.productsForm.patchValue(this.product);
+    }
   }
 
   handleSubmit() {
-
     if (this.productsForm.valid) {
-      this.save.emit(this.productsForm.value);
+      const product = this.product ? { ...this.productsForm.value, id: this.product.id } : this.productsForm.value;
+
+      this.save.emit(product);
     }
   }
 }
