@@ -5,13 +5,15 @@ import { VatPipe } from './vat.pipe';
 import { NgbButtonsModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NieWiemControlComponent } from './nie-wiem-control/nie-wiem-control.component';
 import { TestDirective } from './test.directive';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     TestPipe,
     VatPipe,
     NieWiemControlComponent,
-    TestDirective],
+    TestDirective,
+    HighlightDirective],
   imports: [
     CommonModule,
     NgbButtonsModule,
@@ -23,7 +25,8 @@ import { TestDirective } from './test.directive';
     NieWiemControlComponent,
     NgbButtonsModule,
     NgbModalModule,
-    TestDirective
+    TestDirective,
+    HighlightDirective
   ]
 })
 export class SharedModule { }

@@ -32,7 +32,7 @@
 <div><input type="text" #myInput (keyup)="keyupHandler(myInput.value)">
 {{ myInput.value }}</div>
 <ul>
-  <li [brTest]="user.name" *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
+  <li [brTest]="user.name" brHighlight="naszaklasa" *ngFor="let user of users;let isOdd = odd; let i = index" [ngClass]="{ highlight: isOdd}">
     ({{ i }}) {{ user | test:true }}
 <!-- NEVER!!!!!!!! ->    {{fullName(user.name, user.lastName)}}-->
   </li>
