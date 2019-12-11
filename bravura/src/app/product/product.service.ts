@@ -5,17 +5,15 @@ import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable()
 export class ProductService {
-  private productsSubj$ = new BehaviorSubject(null);
-  products$ = this.productsSubj$.asObservable();
   constructor(private httpClient: HttpClient) { }
 
-  refreshProducts(filter = '') {
-    this.httpClient.get<Product[]>('http://localhost:3000/products', {
+  getProducts(filters: [string, string]) {
+    return this.httpClient.get<Product[]>('http://localhost:3000/products', {
       params: {
-        name_like: filter[0] || '',
-        category_like: filter[1] || ''
+        name_like: filters[0] || '',
+        category_like: filters[1] || ''
       }
-    }).subscribe( p => this.productsSubj$.next(p));
+    });
   }
 
   updateProduct(product: Product) {
